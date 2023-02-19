@@ -5,19 +5,19 @@ import requests
 from flask import Flask, jsonify, request
 
 # create your API token, and set it up in Postman collection as part of the Body section
-API_TOKEN = "Mohyla"
+API_TOKEN = ""
 # you can get API keys for free here - https://api-docs.pgamerx.com/
-WEATHER_API_KEY = "1b1a01833275400e8bd155229231902"
+WEATHER_API_KEY = ""
 
 app = Flask(__name__)
 
 
 def getWeather(location: str, date: str):
-    url_base = "http://api.weatherapi.com/v1/history.json"
+    url_base = "http://api.weatherapi.com/v1/forecast.json"
     query_params = {
         "key": WEATHER_API_KEY,
         "q":location,
-        "dt": date
+        "date": date
     }
     url = f"{url_base}"
     payload = {}
